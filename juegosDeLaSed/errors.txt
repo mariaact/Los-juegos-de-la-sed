@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 29: expected statement.
+    hiden personaje1
+                    ^
+
+Ren'Py Version: Ren'Py 8.0.3.22090809
+Mon Feb 20 12:29:24 2023
