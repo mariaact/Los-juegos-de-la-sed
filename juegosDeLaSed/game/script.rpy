@@ -4,6 +4,8 @@ define jc = Character("Jackie Chan")
 define s = Character("Shakira")
 define e = Character("Elon Musk")
 define t = Character("Thor")
+define sirv = Character("Sirviente")
+define yo = Character("Yo")
 
 
 label start:
@@ -16,29 +18,81 @@ label start:
     "Tras años de guerras entre todos los continentes..."
 
     "El mundo no volvió a ser como antes..."
-    "La población humana pasó de los 8 billones a 100 millones. La escasez de alimentos y productos generó todavía más violencia y un crecimiento de la anarquía en los grupos más débiles. Debido a esta situación de caos general, los lideres mundiales decidieron crear una especie de Juegos del hambre denominado, Los Juegos de la Sed, donde cada continente sería representado por un capitán, el cual se enfrentará contra el resto de los capitanes por conseguir..."
+    "La población humana pasó de los 8 billones a 100 millones. La escasez de alimentos y productos generó todavía más violencia y un crecimiento de la anarquía en los grupos más débiles."
+    "Debido a esta situación de caos general, los lideres mundiales decidieron crear una especie de Juegos del hambre denominado, Los Juegos de la Sed, donde cada continente sería representado por un capitán, el cual se enfrentará contra el resto de los capitanes por conseguir..."
     "La última cerveza, un premio que simbolizaría la hegemonía del continente que la poseyese. Cada capitán recibió una carta de los lideres supremos..."
 
-    
     scene fondoPrimero
 
-    show personaje1 at reset 
+    show napoleon at reset
+    sirv "Señor le ha llegado una carta del primer ministro... "
 
-    n "Hola soy el personajeuno"
-    n "Adios"
+    n "Gracias Roustam! "
 
+    n "*leyendo*"
+
+    n "Usted ha sido invitado..."
+
+    hide napoleon
+
+    show capitan at topright
+
+    ca "a representar a su continente en... "
+
+    hide capitan
+
+    show personaje2 at reset
+    jc "los Juegos de la Sed..."
+
+    hide personaje2
+
+    show shakira at reset
+
+    s "una competición en la que…"
+
+    hide shakira
+
+    show elon at reset
+
+    e "peleareis contra otros capitanes en la Arena Gelida en la Antártida, por..."
+
+    hide elon
+
+    show chris at reset
+    t "salvar a vuestro continente del caos y la destrucción."
+
+    show napoleon at topright
+    
+    n "Suena passionnant"
+    yo "¿Cómo? ¡¿Por qué yo?!"
+
+    image fondoSegundo = im.Scale("fondo2.jpg", 1920, 1100)
+    scene fondoSegundo
+
+    "Unos meses más tarde"
+
+    "Bienvenidos capitanes, a los Juegos de la Sed, donde cada uno de vosotros representará a su respectivo continente. Napoleón, Europa, Jackie Chan, Asia, Shakira, Sur América, Charlie, Almendra (Tú continente), Chris Hemsword, Oceanía y el Capitán América. En estos Juegos   tendréis que pelearos hasta que solo quede uno. "
+
+    image fondoTercero = im.Scale("fondo3.png", 1920, 1100)
+    scene fondoTercero
+
+    yo "De acuerdo, ahora tengo que escoger si voy hacia la cueva helada o seguir los sospechosos sonidos de las tundras. "
+
+    show chris at truecenter
     menu:
-        "4":
+        "enfrentarse":
             jump respuesta4
-        "5":
+        "persuadirlo":
             call respuesta5
 
     label respuesta4:
-        "esta es una instruccion .. 4"
+        "Chris te golpea con el martillo y mueres."
         return
 
     label respuesta5:
-        "Esta es a instruccion .. 5"
+        "¡Hemos ganado el trofeo!"
+        show napoleon at truecenter
+   
 
 
     return
