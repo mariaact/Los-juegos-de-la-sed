@@ -2,9 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 29: expected statement.
-    hiden personaje1
-                    ^
+File "game/script.rpy", line 150: Line is indented, but the preceding scene statement statement does not expect a block. Please check this line's indentation.
+    "GAME OVER"
+    ^
+
+File "game/script.rpy", line 155: Line is indented, but the preceding scene statement statement does not expect a block. Please check this line's indentation.
+    "GAME OVER"
+    ^
+
+File "game/script.rpy", line 160: Line is indented, but the preceding scene statement statement does not expect a block. Please check this line's indentation.
+    "Has ganado!!"
+    ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Mon Feb 20 12:29:24 2023
+Mon Feb 20 17:19:35 2023

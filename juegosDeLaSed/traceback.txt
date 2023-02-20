@@ -1,32 +1,27 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 16, in script
-    show personaje1 at halfsize, right
-  File "game/script.rpy", line 16, in <module>
-    show personaje1 at halfsize, right
-NameError: name 'halfsize' is not defined
+FileNotFoundError: [WinError 2] El sistema no puede encontrar el archivo especificado: 'C:\\Users\\maria\\AppData\\Roaming/RenPy/juegosDeLaSed-1676890732\\persistent'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 16, in script
-    show personaje1 at halfsize, right
-  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\ast.py", line 1408, in execute
-    show_imspec(self.imspec, atl=getattr(self, "atl", None))
-  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\ast.py", line 1367, in show_imspec
-    at_list = [ renpy.python.py_eval(i) for i in at_list ]
-  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\ast.py", line 1367, in <listcomp>
-    at_list = [ renpy.python.py_eval(i) for i in at_list ]
-  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\python.py", line 1092, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\python.py", line 1085, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-  File "game/script.rpy", line 16, in <module>
-    show personaje1 at halfsize, right
-NameError: name 'halfsize' is not defined
+  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\bootstrap.py", line 277, in bootstrap
+    renpy.main.main()
+  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\main.py", line 663, in main
+    renpy.persistent.update(True)
+  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\persistent.py", line 397, in update
+    save()
+  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\persistent.py", line 413, in save
+    renpy.loadsave.location.save_persistent(data)
+  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\savelocation.py", line 494, in save_persistent
+    l.save_persistent(data)
+  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\savelocation.py", line 352, in save_persistent
+    self.persistent_mtime = os.path.getmtime(fn)
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/genericpath.py", line 55, in getmtime
+FileNotFoundError: [WinError 2] El sistema no puede encontrar el archivo especificado: 'C:\\Users\\maria\\AppData\\Roaming/RenPy/juegosDeLaSed-1676890732\\persistent'
 
 Windows-10-10.0.19041 AMD64
 Ren'Py 8.0.3.22090809
 juegosDeLaSed 1.0
-Mon Feb 20 13:06:37 2023
+Mon Feb 20 17:00:42 2023

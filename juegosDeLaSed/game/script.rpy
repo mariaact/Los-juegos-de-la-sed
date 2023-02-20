@@ -24,7 +24,14 @@ label start:
 
     scene fondoPrimero
 
-    show napoleon at reset
+    show napoleon at left with dissolve:
+        yalign 0.0
+        linear 2.0 xpos 700 ypos 500 
+    show chris at right with dissolve:
+        xalign 0.0
+        linear 2.0 xpos 1000 ypos 700
+        
+
     sirv "Señor le ha llegado una carta del primer ministro... "
 
     n "Gracias Roustam! "
@@ -71,12 +78,19 @@ label start:
 
     "Unos meses más tarde"
 
-    "Bienvenidos capitanes, a los Juegos de la Sed, donde cada uno de vosotros representará a su respectivo continente. Napoleón, Europa, Jackie Chan, Asia, Shakira, Sur América, Charlie, Almendra (Tú continente), Chris Hemsword, Oceanía y el Capitán América. En estos Juegos   tendréis que pelearos hasta que solo quede uno. "
+    "Bienvenidos capitanes, a los Juegos de la Sed, donde cada uno de vosotros representará a su respectivo continente. Napoleón (Europa), Jackie Chan (Asia), Shakira (Sur América), Charlie (Almendra), Thor (Oceanía) y el Capitán América (América del Norte). En estos Juegos tendréis que pelearos hasta que solo quede uno."
 
     image fondoTercero = im.Scale("fondo3.png", 1920, 1100)
     scene fondoTercero
 
     yo "De acuerdo, ahora tengo que escoger si voy hacia la cueva helada o seguir los sospechosos sonidos de las tundras. "
+
+
+    menu: 
+        "Cueva Helada":
+            jump respuesta6
+        "Tundra":
+            jump respuesta7
 
     show chris at truecenter
     menu:
@@ -90,8 +104,59 @@ label start:
         return
 
     label respuesta5:
+        show napoleon at left with dissolve:
+            yalign 0.0
+            linear 2.0 xpos 700 ypos 500 
+        show chris at right with dissolve:
+            xalign 0.0
+            linear 2.0 xpos 1000 ypos 700
         "¡Hemos ganado el trofeo!"
-        show napoleon at truecenter
+    
+    label respuesta6:
+        scene fondoPrimero
+        show shakira at left with dissolve:
+            yalign 0.0
+            linear 2.0 xpos 700 ypos 500 
+        show personaje1 at right with dissolve:
+            xalign 0.0
+            linear 2.0 xpos 1000 ypos 700 
+        pause 5.0
+        hide shakira
+        hide personaje1
+        show bang at truecenter with dissolve:
+            linear 15.0
+
+        "Has ganado!"  
+
+        scene fondoSegundo
+        show napoleon at left with dissolve:
+            xalign 0.0
+            linear 2.0 xpos 0 xpos 500
+        pause 1.0
+        show capitan at right
+        pause 2.0
+
+        menu:
+            "enfrentarse":
+                jump perder
+                
+            "persuadirlo":
+                jump ganar
+        return
+    
+    label respuesta7:
+        scene fondoTercero
+        "GAME OVER"
+        return
+    
+    label perder:
+        scene fondoTercero
+        "GAME OVER"
+        return
+    
+    label ganar:
+        scene fondoTercero
+        "Has ganado!!"
    
 
 
