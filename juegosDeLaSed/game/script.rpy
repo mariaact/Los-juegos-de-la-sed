@@ -1,16 +1,26 @@
-﻿define mujer = Character("Eileen")
-define n = Character("Nelson")
+﻿define n = Character("Napoleon")
+define ca = Character("Capitan America")
+define jc = Character("Jackie Chan")
+define s = Character("Shakira")
+define e = Character("Elon Musk")
+define t = Character("Thor")
 
 
 label start:
 
-    image fondoPrimero = im.Scale("fondo1.jpg", 1920, 1280)
+    image fondoPrimero = im.Scale("planeta.jpg", 1920, 1100)
+
 
     scene fondoPrimero
 
-    "De pronto encontre...."
-    "..."
-    "dbkjfbbfurbfurfur"
+    "Tras años de guerras entre todos los continentes..."
+
+    "El mundo no volvió a ser como antes..."
+    "La población humana pasó de los 8 billones a 100 millones. La escasez de alimentos y productos generó todavía más violencia y un crecimiento de la anarquía en los grupos más débiles. Debido a esta situación de caos general, los lideres mundiales decidieron crear una especie de Juegos del hambre denominado, Los Juegos de la Sed, donde cada continente sería representado por un capitán, el cual se enfrentará contra el resto de los capitanes por conseguir..."
+    "La última cerveza, un premio que simbolizaría la hegemonía del continente que la poseyese. Cada capitán recibió una carta de los lideres supremos..."
+
+    
+    scene fondoPrimero
 
     show personaje1 at reset 
 
