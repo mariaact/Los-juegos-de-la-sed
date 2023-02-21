@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 149: expected end of line
-    play music "pelea.wmv.mp3" fadout 10.0 fadein 10.0
-                               ^
+File "game/script.rpy", line 132: Line is indented, but the preceding show statement statement does not expect a block. Please check this line's indentation.
+    xalign 0.0
+    ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Tue Feb 21 12:06:45 2023
+Tue Feb 21 12:42:39 2023

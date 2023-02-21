@@ -1,27 +1,74 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-FileNotFoundError: [WinError 2] El sistema no puede encontrar el archivo especificado: 'C:\\Users\\maria\\AppData\\Roaming/RenPy/juegosDeLaSed-1676890732\\persistent'
+While loading <renpy.display.im.Scale object at 0x000000000564b610>:
+  File "game/script.rpy", line 53, in script
+    jc "los Juegos de la Sed..."
+OSError: Couldn't find file 'jakie.png'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\bootstrap.py", line 277, in bootstrap
-    renpy.main.main()
-  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\main.py", line 663, in main
-    renpy.persistent.update(True)
-  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\persistent.py", line 397, in update
-    save()
-  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\persistent.py", line 413, in save
-    renpy.loadsave.location.save_persistent(data)
-  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\savelocation.py", line 494, in save_persistent
-    l.save_persistent(data)
-  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\savelocation.py", line 352, in save_persistent
-    self.persistent_mtime = os.path.getmtime(fn)
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/genericpath.py", line 55, in getmtime
-FileNotFoundError: [WinError 2] El sistema no puede encontrar el archivo especificado: 'C:\\Users\\maria\\AppData\\Roaming/RenPy/juegosDeLaSed-1676890732\\persistent'
+  File "game/script.rpy", line 53, in script
+    jc "los Juegos de la Sed..."
+  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\ast.py", line 921, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\exports.py", line 1373, in say
+    who(what, *args, **kwargs)
+  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\character.py", line 1266, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\character.py", line 927, in do_display
+    display_say(who,
+  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\character.py", line 666, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\display\core.py", line 3377, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\display\core.py", line 3912, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\display\core.py", line 2602, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 495, in renpy.display.render.render_screen
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\display\layout.py", line 884, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\display\layout.py", line 884, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\display\layout.py", line 884, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\display\transform.py", line 747, in render
+    return transform_render(self, width, height, st, at)
+  File "accelerator.pyx", line 187, in renpy.display.accelerator.transform_render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\display\image.py", line 506, in render
+    return wrap_render(self.target, width, height, st, at)
+  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\display\image.py", line 309, in wrap_render
+    rend = render(child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\display\im.py", line 627, in render
+    return cache.get(self, render=True)
+  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\display\im.py", line 295, in get
+    surf = image.load()
+  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\display\im.py", line 890, in load
+    child = cache.get(self.image)
+  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\display\im.py", line 295, in get
+    surf = image.load()
+  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\display\im.py", line 720, in load
+    raise e
+  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\display\im.py", line 685, in load
+    filelike = renpy.loader.load(self.filename)
+  File "C:\Users\maria\Downloads\renpy-8.0.3-sdk\renpy\loader.py", line 820, in load
+    raise IOError("Couldn't find file '%s'." % name)
+OSError: Couldn't find file 'jakie.png'.
 
 Windows-10-10.0.19041 AMD64
 Ren'Py 8.0.3.22090809
 juegosDeLaSed 1.0
-Mon Feb 20 17:00:42 2023
+Tue Feb 21 13:25:44 2023
