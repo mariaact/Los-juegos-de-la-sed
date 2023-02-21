@@ -8,6 +8,7 @@ define sirv = Character("Sirviente")
 define yo = Character("Yo")
 
 
+
 label start:
 
     image fondoPrimero = im.Scale("planeta.jpg", 1920, 1100)
@@ -25,39 +26,48 @@ label start:
 
     scene fondoPrimero
 
-    show napoleon at left with dissolve:
+    image napoleonImg = im.Scale("shakira.png", 850, 850)
+    image chrisImg = im.Scale("shakira.png", 850, 850)
+
+
+    show napoleonImg at left with dissolve:
         yalign 0.0
-        linear 2.0 xpos 700 ypos 500 
-    show chris at right with dissolve:
+        linear 2.0 xpos 100 ypos 30 
+    show chrisImg at right with dissolve:
         xalign 0.0
-        linear 2.0 xpos 1000 ypos 700
+        linear 2.0 xpos 1000 ypos 870
         
 
     sirv "Señor le ha llegado una carta del primer ministro... "
     n "Gracias Roustam! "
     n "*leyendo*"
     n "Usted ha sido invitado..."
-    hide napoleon
+    hide napoleonImg
 
-    show capitan at topright
+    image capitanImg = im.Scale("shakira.png", 850, 850)
+
+    show capitanImg at topright
     ca "a representar a su continente en... "
-    hide capitan
+    hide capitanImg
 
     show personaje2 at reset
     jc "los Juegos de la Sed..."
     hide personaje2
 
-    show shakira at reset
-    s "una competición en la que…"
-    hide shakira
+    image shakiraImg = im.Scale("shakira.png", 850, 850)
 
-    show elon at reset
+    show shakiraImg at reset
+    s "una competición en la que…"
+    hide shakiraImg
+
+    image elonImg = im.Scale("shakira.png", 850, 850)
+    show elonImg at reset
     e "peleareis contra otros capitanes en la Arena Gelida en la Antártida, por..."
-    hide elon
+    hide elonImg
     
-    show chris at reset
+    show chrisImg at reset
     t "salvar a vuestro continente del caos y la destrucción."
-    show napoleon at topright
+    show napoleonImg at topright
     n "Suena passionnant"
     yo "¿Cómo? ¡¿Por qué yo?!"
 
@@ -82,7 +92,7 @@ label start:
             "Tundra":
                 call respuesta1
 
-        show chris at truecenter
+        show chrisImg at truecenter
         menu:
             "enfrentarse":
                 jump respuesta4
@@ -127,26 +137,30 @@ label start:
     label respuesta6:
         "Los capitanes Capitán América y Shakira, que al parecer se han aliado también, asaltan vuestro campamento y os toca enfrentaros. "
         scene fondoPrimero
-        show shakira at left with dissolve:
+        show shakiraImg at left with dissolve:
             yalign 0.0
-            linear 2.0 xpos 700 ypos 500 
+            linear 2.0 xpos 100 ypos 30 
         show personaje1 at right with dissolve:
             xalign 0.0
-            linear 2.0 xpos 1000 ypos 700 
-        pause 5.0
-        hide shakira
+            linear 2.0 xpos 1000 ypos 870
+        pause 2.0
+        hide shakiraImg
         hide personaje1
+        play music "pelea.wmv.mp3"
+        
         show bang at truecenter with dissolve:
             linear 15.0
-
+        pause 2.0
+        stop music
         "Has ganado!"  
+        
 
         scene fondoSegundo
-        show napoleon at left with dissolve:
+        show napoleonImg at left with dissolve:
             xalign 0.0
-            linear 2.0 xpos 0 xpos 500
+            linear 2.0 xpos 1000 ypos 870
         pause 1.0
-        show capitan at right
+        show capitanImg at right
         pause 2.0
 
         menu:
