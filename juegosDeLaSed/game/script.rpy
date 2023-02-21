@@ -26,25 +26,25 @@ label start:
 
     scene fondoPrimero
 
-    image napoleonImg = im.Scale("shakira.png", 850, 850)
-    image chrisImg = im.Scale("shakira.png", 850, 850)
-
+    image napoleonImg = img.Scale("shakira.png", 850, 850)
+    image chrisImg = img.Scale("shakira.png", 850, 850)
 
     show napoleonImg at left with dissolve:
         yalign 0.0
-        linear 2.0 xpos 100 ypos 30 
+        linear 2.0 xpos 100 ypos 30
     show chrisImg at right with dissolve:
         xalign 0.0
         linear 2.0 xpos 1000 ypos 870
         
 
+    
     sirv "Señor le ha llegado una carta del primer ministro... "
     n "Gracias Roustam! "
     n "*leyendo*"
     n "Usted ha sido invitado..."
     hide napoleonImg
 
-    image capitanImg = im.Scale("shakira.png", 850, 850)
+    image capitanImg = img.Scale("shakira.png", 850, 850)
 
     show capitanImg at topright
     ca "a representar a su continente en... "
@@ -54,13 +54,13 @@ label start:
     jc "los Juegos de la Sed..."
     hide personaje2
 
-    image shakiraImg = im.Scale("shakira.png", 850, 850)
+    image shakiraImg = img.Scale("shakira.png", 850, 850)
 
     show shakiraImg at reset
     s "una competición en la que…"
     hide shakiraImg
 
-    image elonImg = im.Scale("shakira.png", 850, 850)
+    image elonImg = img.Scale("shakira.png", 850, 850)
     show elonImg at reset
     e "peleareis contra otros capitanes en la Arena Gelida en la Antártida, por..."
     hide elonImg
@@ -109,12 +109,12 @@ label start:
         "Thor te insiste en descansar y hacer un campamento. "
         menu:
             "Sí":
-                "Al montar un campamento y prender un fuego, revelais vuestra posición ..."
-                "De repente aparece..."
-                jump respuesta6
+                jump descanso
                 
             "No":
-                jump descanso
+                "Continuáis andando por un camino estrecho, y por vuestros pasos ruidosos revelais vuestra posición ..."
+                "De repente aparece..."
+                jump respuesta6
         return  
         
     label respuesta1:
@@ -122,24 +122,19 @@ label start:
         "Te encuentras con Thor (Quién esta armado con un martillo) "
         "Se te plantea una nueva decisión"
         return
-    
-    label respuesta2:
-
 
     label descanso:
         "El campamento está vacío, pero encuentras un cuchillo. Decidís apagar el fuego y descansar. "
         scene fondoSegundo
         "*El día final*"
+        show napoleon at reset
+        # move napoleon?
         "Llegáis Chris y tu a la zona final y ahí veis como Napoleón mata a Jackie Chan"
-        "Decides que es hora de matar a Napoleón y lo conseguís gracias al cuchillo que recogiste en el campamento. Sin embargo, Chris muere también."
-        # poner un fin AQUI
-
-    label respuesta6:
-        "Los capitanes Capitán América y Shakira, que al parecer se han aliado también, asaltan vuestro campamento y os toca enfrentaros. "
-        scene fondoPrimero
+        "De repente aparecen los capitanes Capitán América y Shakira, que al parecer se han aliado también, asaltan vuestro campamento y os toca enfrentaros. "
+        
         show shakiraImg at left with dissolve:
             yalign 0.0
-            linear 2.0 xpos 100 ypos 30 
+            linear 2.0 xpos 100 ypos 30
         show personaje1 at right with dissolve:
             xalign 0.0
             linear 2.0 xpos 1000 ypos 870
@@ -147,16 +142,31 @@ label start:
         hide shakiraImg
         hide personaje1
         play music "pelea.wmv.mp3"
-        
+
         show bang at truecenter with dissolve:
             linear 15.0
         pause 2.0
         stop music
-        "Has ganado!"  
-        
+        "Napoleón se enfrenta a el Capitán America y le termina matando."
+        "Decides que es hora de matar a Napoleón y lo conseguís gracias al cuchillo que recogiste en el campamento. Sin embargo, Thor muere también."
+        "Finalmente Thor se suicida, debido a que el pensaba que los Juegos eran un truco del gobierno y que realmente la cerveza nunca existió... ahora nunca lo sabrá" 
+        # poner un fin AQUI
+        scene fondoTercero
+        # sonidos de victoria
+        "¡Te conviertes en el ganador de la última cerveza y todo tu continente lo festeja! "
+        "Cuando traéis la última cerveza a tu gente, os dais cuenta de que la cerveza está en un estado lamentable..."
+        "Os plateáis si estos juegos eran realmente un plan de los gobiernos para hacer desconectar a la población mundial... Fin  "
+        return
+
+    label respuesta6:
+        show napoleonImg at reset
+        n "Aquí termina vuestra búsqueda"
+        scene fondoSegundo
+        "GAME OVER"
+        return  
 
         scene fondoSegundo
-        show napoleonImg at left with dissolve:
+        show napoleon at left with dissolve:
             xalign 0.0
             linear 2.0 xpos 1000 ypos 870
         pause 1.0
@@ -179,8 +189,5 @@ label start:
     label ganar:
         scene fondoTercero
         "Has ganado!!"
-   
-
-
     return
 
